@@ -6,8 +6,10 @@ jobs:
     steps:
     - checkout
     - run:
+        command: ls -lah
         command: dotnet test --configuration Debug --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
     - run:
+        command: ls -lah
         command: dotnet test --configuration Debug --framework netcoreapp3.0 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
   test-release:
     docker:
@@ -15,8 +17,10 @@ jobs:
     steps:
     - checkout
     - run:
+        command: ls -lah
         command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
     - run:
+        command: ls -lah
         command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
   deploy:
     docker:
