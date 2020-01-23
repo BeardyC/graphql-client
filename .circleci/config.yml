@@ -2,29 +2,25 @@ version: 2
 jobs:
   test-debug:
     docker:
-    - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+    - image: mcr.microsoft.com/dotnet/core/sdk:3.1
     steps:
     - checkout
-    - run: 
-        command: ls -R -lah
     - run:
-        command: dotnet test --configuration Debug --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
+        command: dotnet test --configuration Debug --framework netcoreapp3.1 ./tests/GraphQL.Primitives.Tests/GraphQL.Primitives.Tests.csproj
     - run:
-        command: dotnet test --configuration Debug --framework netcoreapp3.0 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
+        command: dotnet test --configuration Debug --framework netcoreapp3.1 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
   test-release:
     docker:
-    - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+    - image: mcr.microsoft.com/dotnet/core/sdk:3.1
     steps:
     - checkout
-    - run: 
-        command: ls -R -la
     - run:
-        command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
+        command: dotnet test --configuration Release --framework netcoreapp3.1 ./tests/GraphQL.Primitives.Tests/GraphQL.Primitives.Tests.csproj
     - run:
-        command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
+        command: dotnet test --configuration Release --framework netcoreapp3.1 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
   deploy:
     docker:
-    - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+    - image: mcr.microsoft.com/dotnet/core/sdk:3.1
     environment:
     - MY_GET_SOURCE: https://www.myget.org/F/graphql-dotnet/api/v3/index.json
     steps:
