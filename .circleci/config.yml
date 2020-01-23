@@ -15,9 +15,9 @@ jobs:
     steps:
     - checkout
     - run:
-        command: dotnet test --configuration Release --framework netcoreapp3.1 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
+        command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
     - run:
-        command: dotnet test --configuration Release --framework netcoreapp3.1 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
+        command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Client.Tests/GraphQL.Client.Tests.csproj
   deploy:
     docker:
     - image: mcr.microsoft.com/dotnet/core/sdk:3.1
