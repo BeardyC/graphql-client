@@ -6,7 +6,7 @@ jobs:
     steps:
     - checkout
     - run: 
-        command: ls -lah
+        command: ls -R -lah
     - run:
         command: dotnet test --configuration Debug --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
     - run:
@@ -17,7 +17,7 @@ jobs:
     steps:
     - checkout
     - run: 
-        command: ls -lah
+        command: ls -R -lah
     - run:
         command: dotnet test --configuration Release --framework netcoreapp3.0 ./tests/GraphQL.Common.Tests/GraphQL.Common.Tests.csproj
     - run:
